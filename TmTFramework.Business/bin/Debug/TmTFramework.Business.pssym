@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbols LinesOfCode="298" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:[TmTFramework.Core]TmTFramework.Core.Aspects.Postsharp.AuthoritationAspects.SecuredOperation">
+    <Instance Declaration="#2=T:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager" Id="2ab89924f5b0d4bb">
+      <Target Target="#3=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::#ctor(TmTFramework.DataAccess.Abstract.IAracArizaKayitDal)">
+        <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" Ordinal="17" />
+      </Target>
+      <Target Target="#5=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="18" />
+      </Target>
+      <Target Target="#6=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::GetListByServisId(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="19" />
+      </Target>
+      <Target Target="#7=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::GetById(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="20" />
+      </Target>
+      <Target Target="#8=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::Add(TmTFramework.Entities.Concrete.AracArizaKayit)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="21" />
+      </Target>
+      <Target Target="#9=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::Update(TmTFramework.Entities.Concrete.AracArizaKayit)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="22" />
+      </Target>
+      <Target Target="#10=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::Delete(TmTFramework.Entities.Concrete.AracArizaKayit)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="23" />
+      </Target>
+      <Target Target="#11=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::DeleteRange(System.Collections.Generic.List{[TmTFramework.Entities]TmTFramework.Entities.Concrete.AracArizaKayit})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="24" />
+      </Target>
+      <Target Target="#12=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracArizaKayitManager::AddRange(System.Collections.Generic.List{[TmTFramework.Entities]TmTFramework.Entities.Concrete.AracArizaKayit})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="25" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#13=T:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracBakimService" Id="2ab89924f8ace5dd">
+      <Target Target="#14=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracBakimService::AddServisAndArizaKayit(TmTFramework.Entities.Concrete.Servis, System.Collections.Generic.List{[TmTFramework.Entities]TmTFramework.Entities.Concrete.AracArizaKayit})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="12" />
+      </Target>
+      <Target Target="#15=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracBakimService::DeleteServiceWithVehicleFailures(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="14" />
+      </Target>
+      <Target Target="#16=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracBakimService::DeleteServiceWithVehicleFailures(TmTFramework.Entities.Concrete.Servis, System.Collections.Generic.List{[TmTFramework.Entities]TmTFramework.Entities.Concrete.AracArizaKayit})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="16" />
+      </Target>
+      <Target Target="#17=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracBakimService::#ctor(TmTFramework.DataAccess.Abstract.IServisDal, TmTFramework.DataAccess.Abstract.IAracArizaKayitDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="10" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#18=T:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager" Id="2ab89924149f70a7">
+      <Target Target="#19=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager::#ctor(TmTFramework.DataAccess.Abstract.IAracDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="26" />
+      </Target>
+      <Target Target="#20=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="27" />
+      </Target>
+      <Target Target="#21=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager::GetById(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="28" />
+      </Target>
+      <Target Target="#22=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager::Add(TmTFramework.Entities.Concrete.Arac)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="29" />
+      </Target>
+      <Target Target="#23=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager::Update(TmTFramework.Entities.Concrete.Arac)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="30" />
+      </Target>
+      <Target Target="#24=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager::Delete(TmTFramework.Entities.Concrete.Arac)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="31" />
+      </Target>
+      <Target Target="#25=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager::GetCarInfoForAd(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="32" />
+      </Target>
+      <Target Target="#26=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.AracManager::GetAllWithDetail()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="33" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#27=T:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ArizaKategoriManager" Id="2ab899240c8ccffd">
+      <Target Target="#28=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ArizaKategoriManager::#ctor(TmTFramework.DataAccess.Abstract.IArizaKategoriDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="34" />
+      </Target>
+      <Target Target="#29=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ArizaKategoriManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="35" />
+      </Target>
+      <Target Target="#30=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ArizaKategoriManager::GetById(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="36" />
+      </Target>
+      <Target Target="#31=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ArizaKategoriManager::Add(TmTFramework.Entities.Concrete.ArizaKategori)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="37" />
+      </Target>
+      <Target Target="#32=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ArizaKategoriManager::Update(TmTFramework.Entities.Concrete.ArizaKategori)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="38" />
+      </Target>
+      <Target Target="#33=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ArizaKategoriManager::Delete(TmTFramework.Entities.Concrete.ArizaKategori)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="39" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#34=T:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.PersonelManager" Id="2ab89924e14be83e">
+      <Target Target="#35=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.PersonelManager::#ctor(TmTFramework.DataAccess.Abstract.IPersonelDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="40" />
+      </Target>
+      <Target Target="#36=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.PersonelManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="41" />
+      </Target>
+      <Target Target="#37=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.PersonelManager::GetById(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="42" />
+      </Target>
+      <Target Target="#38=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.PersonelManager::Add(TmTFramework.Entities.Concrete.Personel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="43" />
+      </Target>
+      <Target Target="#39=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.PersonelManager::Update(TmTFramework.Entities.Concrete.Personel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="44" />
+      </Target>
+      <Target Target="#40=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.PersonelManager::Delete(TmTFramework.Entities.Concrete.Personel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="45" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#41=T:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.RoleManager" Id="2ab89924f4d07a9c">
+      <Target Target="#42=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.RoleManager::#ctor(TmTFramework.DataAccess.Abstract.IRoleDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="46" />
+      </Target>
+      <Target Target="#43=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.RoleManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="47" />
+      </Target>
+      <Target Target="#44=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.RoleManager::GetById(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="48" />
+      </Target>
+      <Target Target="#45=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.RoleManager::Add(TmTFramework.Entities.Concrete.Role)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="49" />
+      </Target>
+      <Target Target="#46=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.RoleManager::Update(TmTFramework.Entities.Concrete.Role)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="50" />
+      </Target>
+      <Target Target="#47=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.RoleManager::Delete(TmTFramework.Entities.Concrete.Role)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="51" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#48=T:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager" Id="2ab89924c034fe41">
+      <Target Target="#49=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::GetServisDetails()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="7" />
+      </Target>
+      <Target Target="#50=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::#ctor(TmTFramework.DataAccess.Abstract.IServisDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="0" />
+      </Target>
+      <Target Target="#51=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#52=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::GetById(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="2" />
+      </Target>
+      <Target Target="#53=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::Add(TmTFramework.Entities.Concrete.Servis)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="3" />
+      </Target>
+      <Target Target="#54=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::Update(TmTFramework.Entities.Concrete.Servis)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="4" />
+      </Target>
+      <Target Target="#55=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::Delete(TmTFramework.Entities.Concrete.Servis)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="5" />
+      </Target>
+      <Target Target="#56=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::AddRange(System.Collections.Generic.List{[TmTFramework.Entities]TmTFramework.Entities.Concrete.Servis})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="8" />
+      </Target>
+      <Target Target="#57=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.ServisManager::GetServisDetailsById(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="9" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#58=T:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.UrunManager" Id="2ab899240931ba36">
+      <Target Target="#59=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.UrunManager::#ctor(TmTFramework.DataAccess.Abstract.IUrunDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="52" />
+      </Target>
+      <Target Target="#60=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.UrunManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="53" />
+      </Target>
+      <Target Target="#61=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.UrunManager::GetById(System.Guid)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="54" />
+      </Target>
+      <Target Target="#62=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.UrunManager::Add(TmTFramework.Entities.Concrete.Urun)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="55" />
+      </Target>
+      <Target Target="#63=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.UrunManager::Update(TmTFramework.Entities.Concrete.Urun)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="56" />
+      </Target>
+      <Target Target="#64=M:[TmTFramework.Business]TmTFramework.Business.Concrete.Managers.UrunManager::Delete(TmTFramework.Entities.Concrete.Urun)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="57" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#49" Id="2ab899246988daae">
+      <Target>
+        <JoinPoint Advising="#1" Description="#4" Ordinal="6" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#65=T:[TmTFramework.Core]TmTFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect">
+    <Instance Declaration="#14" Id="2ab89924aeb981d2">
+      <Target>
+        <JoinPoint Advising="#65" Description="#4" Ordinal="11" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#15" Id="2ab89924f705f455">
+      <Target>
+        <JoinPoint Advising="#65" Description="#4" Ordinal="13" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#16" Id="2ab8992435ad3331">
+      <Target>
+        <JoinPoint Advising="#65" Description="#4" Ordinal="15" />
+      </Target>
+    </Instance>
+  </Class>
+  <Annotation Target="#66=M:[TmTFramework.Core]TmTFramework.Core.Aspects.Postsharp.AuthoritationAspects.SecuredOperation::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#67=2" Description="#68=PostSharp estimates that 2 line(s) of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
+  <Annotation Target="#69=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnSuccess([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#67" Description="#68" />
+  <Annotation Target="#70=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnExit([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#67" Description="#68" />
+  <Annotation Target="#71=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnException([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#67" Description="#68" />
+  <Annotation Target="#72=M:[TmTFramework.Core]TmTFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#67" Description="#68" />
+  <Annotation Target="#73=M:[TmTFramework.Core]TmTFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#67" Description="#68" />
+  <Annotation Target="#74=M:[TmTFramework.Core]TmTFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#67" Description="#68" />
+</Symbols>

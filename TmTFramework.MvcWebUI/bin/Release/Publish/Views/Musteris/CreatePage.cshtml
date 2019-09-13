@@ -1,0 +1,79 @@
+﻿@model TmtAracServis.DAL.Musteri
+
+@{
+    ViewBag.Title = "Müşteri Kayıt";
+}
+
+    <section class="content-header">
+        <h1>
+            Müşteri Kayıt
+        </h1>
+    </section>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <section class="content">
+        <div class="box box-default">
+            <div class="box-body">
+                <div class="row">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AdSoyad, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.AdSoyad) } })
+                            @Html.ValidationMessageFor(model => model.AdSoyad, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Telefon) } })
+                            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Email) } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Adres, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Adres) } })
+                            @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.VergiDairesi, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.VergiDairesi, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.VergiDairesi) } })
+                            @Html.ValidationMessageFor(model => model.VergiDairesi, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.VergiNo, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.VergiNo, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.VergiNo) } })
+                            @Html.ValidationMessageFor(model => model.VergiNo, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <a href="@Url.Action("Index")" class="btn btn-default">İptal</a>
+            <button type="submit" class="btn btn-info pull-right">Kaydet</button>
+        </div>
+    </section>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

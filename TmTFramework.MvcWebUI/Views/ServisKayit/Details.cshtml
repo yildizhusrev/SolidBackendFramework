@@ -1,0 +1,96 @@
+﻿@model TmTFramework.Entities.ComplexType.ServisDetails
+
+@{
+    Layout = null;
+    string arizaButtonClass ,arizaButtonSimgeClass = "";
+}
+
+<div>
+    <dl class="dl-horizontal" style="font-size: 15pt">
+        <dt>
+            @Html.DisplayNameFor(model => model.AracPlaka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AracPlaka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServisZamani)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServisZamani)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServisMusterisi.AdSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServisMusterisi.AdSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServisMusterisi.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServisMusterisi.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServisMusterisi.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServisMusterisi.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ServisMusterisi.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServisMusterisi.Adres)
+        </dd>
+        <dt>Arıza Kayıtları</dt>
+        <dd>
+            <br />
+            <table>
+
+                @foreach (var arizaKategori in Model.AracArizaKayitlari)
+                {
+                    
+                            arizaButtonClass = "btn-primary"; arizaButtonSimgeClass = "fa-clock-o";
+
+                            if (arizaKategori.PersonelId == null)
+                            { arizaButtonClass = "btn-warning"; arizaButtonSimgeClass = "fa-user-plus"; }
+                            if (arizaKategori.ArizaTamamlandiMi)
+                            { arizaButtonClass = "btn-success"; arizaButtonSimgeClass = "fa-check"; }
+
+                <tr>
+                    <td>
+
+                        <button onclick="isDurumu(
+    '@arizaKategori.PersonelId',
+    '@arizaKategori.ArizaTamamlandiMi.ToString()',
+    '@arizaKategori.AracArizaKayitId')"
+                                class="btn @arizaButtonClass" style="width:120px; float:left;margin:2px;">
+                            <i class="fa @arizaButtonSimgeClass pull-left"></i>  @arizaKategori.ArizaKategoriAdi
+                        </button>
+
+                    </td>
+                </tr>
+                }
+
+            </table>
+
+
+        </dd>
+
+
+
+
+    </dl>
+</div>
+

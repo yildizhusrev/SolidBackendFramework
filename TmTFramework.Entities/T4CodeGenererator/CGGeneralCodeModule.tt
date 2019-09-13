@@ -1,0 +1,53 @@
+﻿<#@ template language="C#" hostspecific="True" #>
+<#@include file="CGMultipleOutputHelper.ttinclude" #>
+<#@include file="CGProjectDefineSetting.ttinclude" #>
+<#@include file="CGDatabaseObjectCreator.ttinclude" #>
+<#@ output extension=".txt" #>
+
+//burada yazan sınıflar bussinesModule clasına eklnemelidir
+<#
+foreach(var item in tablolar)
+{
+#>
+Bind<I<#= item.Name #>Service>().To<<#= item.Name #>Manager>().InSingletonScope();
+Bind<I<#= item.Name #>Dal>().To<Ef<#= item.Name #>Dal>();
+
+<#
+}
+#>
+
+
+<#
+/*
+Bind<IMusteriService>().To<MusteriManager>().InSingletonScope();
+Bind<IMusteriDal>().To<EfMusteriDal>();
+
+
+Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
+Bind<DbContext>().To<TMTServisContext>();
+*/
+#>
+
+//burada yazanlar Context sınıfına DbSet şeklinde eklenmelidir
+<#
+foreach(var item in tablolar)
+{
+#>
+public DbSet<<#= item.Name #>> <#= item.Name #>s { get; set; }
+
+<#
+}
+#>
+
+//burada yazanlar Context sınıfına OnMosdelCreating metoduna
+// eklenmelidir. Tabloların S takısı gibi durumlarını ayarlar 
+<#
+foreach(var item in tablolar)
+{
+#>
+modelBuilder.Entity<<#= item.Name #>>().ToTable("<#= item.Name #>");
+
+
+<#
+}
+#>

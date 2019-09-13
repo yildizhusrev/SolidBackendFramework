@@ -1,0 +1,22 @@
+﻿@model TmTFramework.Entities.ComplexType.AracKayitBilgi
+
+@{
+    Layout = null;
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "Basarili" }, new { id = "formKapsayici" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Aracı Silmek İstediğinize Eminmisiniz?</h4>
+
+    <div>
+        @Model.MusteriAdi <br />
+        @Model.Marka / @Model.Model <br />
+        @Model.Plaka
+    </div>
+    <hr />
+        @Html.Partial("_FormKaydetIptalPartial", new ViewDataDictionary { { "SubmitButtonText", "Sil" } })
+
+}
+
+@Html.Partial("_PartialCRUDAjaxScriptResponse")

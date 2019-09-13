@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6A4E33B-4EED-4347-9DDE-CE73861C2C16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TmTFramework.DataAccess</RootNamespace>
+    <AssemblyName>TmTFramework.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAracArizaKayitDal.cs" />
+    <Compile Include="Abstract\IAracDal.cs" />
+    <Compile Include="Abstract\IArizaKategoriDal.cs" />
+    <Compile Include="Abstract\IMusteriDal.cs" />
+    <Compile Include="Abstract\IPersonelDal.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
+    <Compile Include="Abstract\IServisDal.cs" />
+    <Compile Include="Abstract\IUrunDal.cs" />
+    <Compile Include="Abstract\IUserRoleDal.cs" />
+    <Compile Include="Abstract\IUsersDal.cs" />
+    <Compile Include="Concrete\Dapper\DapperMusteriDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFAracArizaKayitDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFAracDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFArizaKategoriDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFMusteriDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFPersonelDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFRoleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFServisDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFUrunDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFUserRoleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EFUsersDal.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\AkademikPersonelMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\BolumMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\DersMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\MusteriMap.cs" />
+    <Compile Include="Concrete\EntityFramework\TMTServisContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TmTFramework.Core\TmTFramework.Core.csproj">
+      <Project>{f41082fe-ae1f-454b-bb1e-fe5e4538bb04}</Project>
+      <Name>TmTFramework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TmTFramework.Entities\TmTFramework.Entities.csproj">
+      <Project>{a3ccf3eb-0652-406f-b735-1b80f91748f3}</Project>
+      <Name>TmTFramework.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<TmTFramework.Entities.Concrete.ArizaKategori>
+
+@{
+    ViewBag.Baslik = "Araç Arıza Kategori";
+    Layout = null;
+
+}
+
+
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UstArizaKategoriId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th class="text-right">
+                <button class="btn btn-sm btn-primary btn-sm m-modal"
+                        onclick="Ekle()">
+                    <i class="fa fa-plus"></i> Yeni Ekle
+                </button>
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UstArizaKategoriId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aciklama)
+                </td>
+                <td class="text-right">
+
+                    <button class="btn btn-success btn-sm m-modal"
+                            onclick="Duzenle('@item.Id')">
+                        Düzenle
+                    </button>
+
+                    <button class="btn btn-danger btn-sm m-modal"
+                            onclick="Sil('@item.Id')">
+                        Sil
+                    </button>
+
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>
+
+@Html.Partial("_PartialAjaxCUD", new ViewDataDictionary { { "Baslik", "Arıza Kategori" } })
+
+
+
+

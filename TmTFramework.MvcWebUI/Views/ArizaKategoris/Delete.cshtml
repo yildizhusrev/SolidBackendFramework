@@ -1,0 +1,21 @@
+﻿@model TmTFramework.Entities.Concrete.ArizaKategori
+@{
+    Layout = null;
+
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "Basarili" }, new { id = "formKapsayici" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Aracı Silmek İstediğinize Eminmisiniz?</h4>
+
+    <div>
+        @Model.Adi <br />
+        @Model.Aciklama
+    </div>
+    <hr />
+    @Html.Partial("_FormKaydetIptalPartial", new ViewDataDictionary { { "SubmitButtonText", "Sil" } })
+
+}
+
+@Html.Partial("_PartialCRUDAjaxScriptResponse")

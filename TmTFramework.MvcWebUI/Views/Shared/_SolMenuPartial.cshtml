@@ -1,0 +1,105 @@
+﻿<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="active">
+                <a href="/">
+                    <i class="fa fa-home"></i> <span>Ana Sayfa</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-car"></i> <span>Araç Kabul</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li><a href="@Url.Action("AracKayit","AracKabul")"><i class="fa fa-circle-o"></i>Yeni Kayıt</a></li>
+                    <li><a href="@Url.Action("Index","AracArizaYonetimi")"><i class="fa fa-circle-o"></i>Kayıtlı Araç</a></li>
+                    <li><a href="@Url.Action("Index","ServisKayit")"><i class="fa fa-circle-o"></i>Servis Kayıtları</a></li>
+
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-handshake-o"></i> <span>Müşteri</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Create","Musteris")"><i class="fa fa-circle-o"></i>Yeni Kayıt</a></li>
+                    <li><a href="@Url.Action("Index","Musteris")"><i class="fa fa-circle-o"></i>Kayıtlı Müşteri</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-handshake-o"></i> <span>Araç</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Create","Aracs")"><i class="fa fa-circle-o"></i>Yeni Kayıt</a></li>
+                    <li><a href="@Url.Action("Index","Aracs")"><i class="fa fa-circle-o"></i>Kayıtlı Araçlar</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i> <span>Personel</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Index","Personels")"><i class="fa fa-circle-o"></i>Kayıtlı Personel</a></li>
+                    @*<li><a href="kayitlipersonel.html"><i class="fa fa-circle-o"></i>Kayıtlı Personel</a></li>*@
+                    <li><a href="isemri.html"><i class="fa fa-circle-o"></i>İş Emri</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cogs"></i> <span>Yedek Parça</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Index","Uruns")"><i class="fa fa-circle-o"></i>Kayitli Yedek Parça</a></li>
+                   
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cogs"></i> <span>Parametreler</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Index","ArizaKategoris")"><i class="fa fa-circle-o"></i>Ariza Kategorileri</a></li>
+
+                </ul>
+            </li>
+           
+            <li>
+                <a href="#">
+                    <i class="fa fa-car"></i> <span>Araç Teslim</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-book"></i> <span>Rehber</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-sliders"></i> <span>Parametre</span>
+                </a>
+            </li>
+
+        </ul>
+    </section>
+</aside>

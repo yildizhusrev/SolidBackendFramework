@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <span class="logo-mini"><img src="/content/dist/img/logo.png" width="50px"><b></b></span>
+            <span class="logo-lg"><img src="/content/dist/img/logo.png" width="100px"><b></b></span>
+        </a>
+        <!-- Logo -->
+        <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="/content/dist/img/user.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs">@User.Identity.GetUserName()</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-header">
+                                <img src="/content/dist/img/user.png" class="img-circle" alt="User Image">
+                                <p>@User.Identity.GetUserName()<small>Rol Adi</small></p>
+                            </li>
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Şifre Düzenle</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-default btn-flat">Çıkış Yap</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "hidden" }))
+{
+    @Html.AntiForgeryToken()
+
+}

@@ -1,0 +1,114 @@
+﻿@model IEnumerable<TmTFramework.Entities.ComplexType.MusteriIndexList>
+    @{ Layout = null;}
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Musterisi.AdSoyad)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Musterisi.Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Musterisi.Email)
+            </th>
+            <th>
+                Araç Adedi
+            </th>
+
+            <th class="text-right">
+                <button class="btn btn-sm btn-primary btn-sm m-modal"
+                        onclick="musteriEkle()">
+                    <i class="fa fa-plus"></i> Yeni Ekle2
+                </button>
+                
+                @*<button class="btn btn-sm btn-primary btn-sm m-modal"
+                        data-title="Müşteri Ekle"
+                        data-type="load"
+                        data-target="@Url.Action("Create")">
+                    <i class="fa fa-plus"></i> Yeni Ekle
+                </button>*@
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderBy(h=>h.Musterisi.AdSoyad))
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Musterisi.AdSoyad)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Musterisi.Telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Musterisi.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AracAdedi)
+                </td>
+
+                <td class="text-right">
+
+                    <button class="btn btn-success btn-sm m-modal"  
+                        onclick="musteriDuzenle('@item.Musterisi.Id')" >
+                        Düzenle
+                    </button>                  
+
+                    <button class="btn btn-danger btn-sm m-modal"
+                            onclick="musteriSil('@item.Musterisi.Id')" >
+                           
+                       Sil
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    musteriEkle = function () {
+        MustangModal.prop({
+            title: "Yeni Müşteri Ekle",
+            animate: "toggle",
+            speed: 300,
+            width: 950,
+            escapeClose: false,
+            onClose: function () {
+                Listele();
+            }
+        }).load('@Url.Action("Create")').open();
+    }
+
+    musteriSil = function (x) {
+        MustangModal.prop({
+            title: "Müşteri Sil",
+            animate: "toggle",
+            speed: 300,
+            width: 950,
+            escapeClose: false,
+            onClose: function () {
+                Listele();
+            }
+        }).load('@Url.Action("Delete")/'+x).open();
+    }
+
+    musteriDuzenle = function (x) {
+        MustangModal.prop({
+            title: "Müşteri Sil",
+            animate: "toggle",
+            speed: 300,
+            width: 950,
+            escapeClose: false,
+            onClose: function () {
+                Listele();
+            }
+        }).load('@Url.Action("Edit")/'+x).open();
+    }
+</script>

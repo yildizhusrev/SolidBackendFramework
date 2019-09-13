@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TmTFramework.Entities.ComplexType.ServisDetails>
+    @{ Layout = null;}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AracPlaka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServisMusterisi.AdSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServisZamani)
+        </th>
+        <th>
+            İşlem Adedi
+        </th>
+        <th class="text-right">
+            <button class="btn btn-sm btn-primary btn-sm m-modal"
+                    onclick="Ekle()">
+                <i class="fa fa-plus"></i> Yeni Ekle
+            </button>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AracPlaka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServisMusterisi.AdSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServisZamani)
+            </td>
+            <td>
+                <strong>@item.AracArizaKayitlari.Count()</strong>  
+            </td>
+            <td class="text-right">
+
+                <button class="btn btn-success btn-sm m-modal"
+                        onclick="Gozat('@item.Id')">
+                    Düzenle
+                </button>
+
+                <button class="btn btn-danger btn-sm m-modal"
+                        onclick="Sil('@item.Id')">
+                    Sil
+                </button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.Partial("_PartialAjaxCUD", new ViewDataDictionary { { "Baslik", "Araç Servis Kaydi" } })

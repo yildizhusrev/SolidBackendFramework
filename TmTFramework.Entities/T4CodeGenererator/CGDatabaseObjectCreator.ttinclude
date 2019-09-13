@@ -1,0 +1,176 @@
+﻿    <#@ template debug="false" hostspecific="false" language="C#" #>
+    <#@ assembly name="System.Core" #>
+    <#@ assembly name="System.Data" #>
+    <#@ assembly name="System.Data.DataSetExtensions" #>
+    <#@ assembly name="System.Xml" #>
+    <#@ assembly name="System.Xml.Linq" #>
+    <#@ import namespace="System.IO" #>
+    <#@ import namespace="System.Data.SqlClient" #>
+    <#@ import namespace="System.Data" #>
+    <#@ import namespace="System.Collections.Generic" #>
+    <#@ import namespace="System.Xml" #>
+    <#@ import namespace="System.Xml.Linq" #>
+    <#@ import namespace="System.Text" #>
+    <#@ import namespace="System.Linq" #>
+	<#@ output extension=".txt" #>
+
+<#
+
+                
+                List<DatabaseTable> tablolar = new List<DatabaseTable>();
+                System.Data.SqlClient.SqlDataAdapter adapter = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                DataSet dsTablesInformations = new DataSet();
+				string connectionString = "Data Source=SUNUCU24\SQLEXPRESS;	Initial Catalog=TmT.ServisTakip;	Integrated Security=True";
+
+                SqlConnection conn = new SqlConnection(connectionString);
+
+				//string command = string.Format("select st.TABLE_SCHEMA,st.TABLE_NAME from INFORMATION_SCHEMA.TABLES st");
+                string command = string.Format("select st.TABLE_SCHEMA,st.TABLE_NAME from INFORMATION_SCHEMA.TABLES st where st.TABLE_NAME IN ('Users','Role','UserRole')");
+                
+				SqlCommand comm = new SqlCommand(command, conn);
+                adapter.SelectCommand = comm;
+                adapter.Fill(ds);
+                adapter.Dispose();
+                comm.Dispose();
+                conn.Close();
+                DatabaseTable tablo;
+                foreach (DataTable table in ds.Tables)
+                {
+                    foreach (DataRow item in table.Rows)
+                    {
+                        tablo = new DatabaseTable();
+                        tablo.Name = item.ItemArray[1].ToString();
+                        tablo.properties = GetTableProperties(item.ItemArray[1].ToString());
+                        tablolar.Add(tablo);
+                    }
+
+                }
+
+				/*
+                foreach (var item in tablolar)
+                {
+#>
+<#= item.Name #>
+<#
+                    foreach (var itemP in item.properties)
+                    {
+#>
+ <#= itemP.Property #>
+<#
+                    }
+                }
+				*/
+           
+           
+
+
+#>
+<#+
+
+ public static string GetNulable(string status)
+        {
+            if (status.ToLower().Equals("yes"))
+                return "?";
+            return string.Empty;
+        }
+#>
+
+<#+
+    public static string GetNetDataType(string sqlDataTypeName)
+    {
+        switch (sqlDataTypeName.ToLower())
+        {
+            case "bigint":
+                return "Int64";
+            case "binary":
+            case "image":
+            case "varbinary":
+                return "byte[]";
+            case "bit":
+                return "bool";
+            case "char":
+                return "char";
+            case "datetime":
+            case "smalldatetime":
+                return "DateTime";
+            case "decimal":
+            case "money":
+            case "numeric":
+                return "decimal";
+            case "float":
+                return "double";
+            case "int":
+                return "int";
+            case "nchar":
+            case "nvarchar":
+            case "text":
+            case "varchar":
+            case "xml":
+                return "string";
+            case "real":
+                return "single";
+            case "smallint":
+                return "Int16";
+            case "tinyint":
+                return "byte";
+            case "uniqueidentifier":
+                return "Guid";
+            default:
+                return null;
+        }
+    }
+   
+#>
+
+<#+ 
+  private static List<DatabaseTableProperty> GetTableProperties(string databaseTableName)
+        {
+            List<DatabaseTableProperty> properties = new List<DatabaseTableProperty>();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            DataSet dsTablesInformations = new DataSet();
+            string connectionString = "Data Source=SUNUCU24\SQLEXPRESS;	Initial Catalog=TmT.ServisTakip;	Integrated Security=True";
+            SqlConnection conn = new SqlConnection(connectionString);
+
+
+            string command = string.Format(
+                 @"SELECT sc.DATA_TYPE,sc.IS_NULLABLE,sc.COLUMN_NAME
+                                FROM INFORMATION_SCHEMA.COLUMNS sc
+                                where sc.TABLE_NAME = '{0}'
+                                order by sc.ORDINAL_POSITION", databaseTableName);
+            SqlCommand comm = new SqlCommand(command, conn);
+            adapter.SelectCommand = comm;
+            adapter.Fill(dsTablesInformations);
+            adapter.Dispose();
+            comm.Dispose();
+            conn.Close();
+
+            foreach (DataTable tableInfo in dsTablesInformations.Tables)
+            {
+                foreach (DataRow rowTableInfo in tableInfo.Rows)
+                {
+                    properties.Add(new DatabaseTableProperty()
+                    {
+                        Property = $"public { GetNetDataType(rowTableInfo.ItemArray[0].ToString())}{GetNulable(rowTableInfo.ItemArray[1].ToString())} \t{rowTableInfo.ItemArray[2].ToString()}{{ get; set; }}"
+                    });
+                }
+            }
+            return properties;
+        }
+#>
+
+<#+
+    public class DatabaseTable
+    {
+        public string Name { get; set; }
+        public List<DatabaseTableProperty> properties { get; set; }
+    }
+
+    public class DatabaseTableProperty
+    {
+        public string Property { get; set; }
+    }
+
+#>

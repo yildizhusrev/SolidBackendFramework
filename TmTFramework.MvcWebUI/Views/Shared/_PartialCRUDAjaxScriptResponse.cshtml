@@ -1,0 +1,18 @@
+﻿<script>
+    function Basarili(cevap) {
+        debugger;
+        if (cevap.sonuc) {
+            toastr.success(cevap.mesaj);
+            MustangModal.close();
+        } else {
+            toastr.error(cevap.mesaj);
+        }
+    }
+    function Hatali(cevap) {
+        console.log(cevap);
+        errorAlert2(cevap)
+    }
+    function PencereKapat() {
+        MustangModal.close();
+    }
+</script>

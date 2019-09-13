@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TMT Bilişim</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="bower_components/morris.js/morris.css">
+	<link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+	<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+	<header class="main-header">
+		<!-- Logo -->
+		<a href="index.html" class="logo">
+			<span class="logo-mini"><img src="dist/img/logo.png" width="50px"><b></b></span>
+			<span class="logo-lg"><img src="dist/img/logo.png" width="100px"><b></b></span>
+		</a>
+		<!-- Logo -->		
+		<nav class="navbar navbar-static-top">
+			<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			</a>
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav">
+					<li class="dropdown user user-menu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="dist/img/user.png" class="user-image" alt="User Image">
+							<span class="hidden-xs">Enes Güzel</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="user-header">
+								<img src="dist/img/user.png" class="img-circle" alt="User Image">
+								<p>Enes Güzel<small>Administrator</small></p>
+							</li>
+							<li class="user-footer">
+								<div class="pull-left">
+									<a href="#" class="btn btn-default btn-flat">Şifre Düzenle</a>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="btn btn-default btn-flat">Çıkış Yap</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- Menu -->
+	<aside class="main-sidebar">
+		<section class="sidebar">
+			<ul class="sidebar-menu" data-widget="tree">
+				<li class="active">
+					<a href="index.html">
+						<i class="fa fa-home"></i> <span>Ana Sayfa</span>
+					</a>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-car"></i> <span>Araç Kabul</span>
+						<span class="pull-right-container">
+							<i class="fa fa-angle-left pull-right"></i>
+						</span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="kayitarac.html"><i class="fa fa-circle-o"></i>Yeni Kayıt</a></li>
+						<li><a href="kayitliarac.html"><i class="fa fa-circle-o"></i>Kayıtlı Araç</a></li>
+					</ul>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-handshake-o"></i> <span>Müşteri</span>
+						<span class="pull-right-container">
+							<i class="fa fa-angle-left pull-right"></i>
+						</span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="kayitmusteri.html"><i class="fa fa-circle-o"></i>Yeni Kayıt</a></li>
+						<li><a href="kayitlimusteri.html"><i class="fa fa-circle-o"></i>Kayıtlı Müşteri</a></li>
+					</ul>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-users"></i> <span>Personel</span>
+						<span class="pull-right-container">
+							<i class="fa fa-angle-left pull-right"></i>
+						</span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="kayitpersonel.html"><i class="fa fa-circle-o"></i>Yeni Kayıt</a></li>
+						<li><a href="kayitlipersonel.html"><i class="fa fa-circle-o"></i>Kayıtlı Personel</a></li>
+						<li><a href="isemri.html"><i class="fa fa-circle-o"></i>İş Emri</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="yedekparca.html">
+						<i class="fa fa-cogs"></i> <span>Yedek Parça</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-car"></i> <span>Araç Teslim</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-book"></i> <span>Rehber</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-sliders"></i> <span>Parametre</span>
+					</a>
+				</li>
+				
+			</ul>
+		</section>
+	</aside>
+	<!-- Menu -->
+
+	<div class="content-wrapper">
+		<section class="content-header">
+			<h1>Ana Sayfa<small>Kontrol Paneli</small></h1>
+		</section>
+		<section class="content">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="box">
+						<div class="box-header">
+							<h3 class="box-title">İşlemde Olan Araçlar</h3>
+							<div class="box-tools">
+								<div class="input-group input-group-sm" style="width: 150px;">
+									<input type="text" name="table_search" class="form-control pull-right" placeholder="Arama">
+									<div class="input-group-btn">
+										<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="box-body table-responsive no-padding">
+							<table class="table table-hover">
+								<tr>
+									<th>Plaka</th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th align="right">Durum</th>
+									<th></th>
+									
+								</tr>
+								<tr>
+									<td><a href="">35 ABC 123</a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 1 <label><input type="checkbox" checked></label></a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 2 <label><input type="checkbox" checked></label></a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 3 <label><input type="checkbox" checked></label></a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 4 <label><input type="checkbox" checked></label></a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 5 <label><input type="checkbox" checked></label></a></td>
+									<td><span class="label label-success">Tamamlandı</span></td>
+									<td>
+										<a href="" title="Beklemeye Al">
+											<i class="fa fa-clock-o fa-2x"></i> 
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td><a href="">35 ABC 123</a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 1 <label><input type="checkbox" checked></label></a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 2 <label><input type="checkbox" ></label></a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 3 <label><input type="checkbox" ></label></a></td>
+									<td></td>
+									<td></td>
+									<td><span class="label label-warning">İşlemde</span></td>
+									<td>
+										<a href="" title="Beklemeye Al">
+											<i class="fa fa-clock-o fa-2x"></i> 
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td><a href="">35 ABC 123</a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 3 <label><input type="checkbox" ></label></a></td>
+									<td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 4 <label><input type="checkbox" ></label></a></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td><span class="label label-danger">Beklemede</span></td>
+									<td>
+										<a href="" title="Personel Ata">
+											<i class="fa fa-user-plus fa-2x"></i> 
+										</a>
+										<a href="" title="Beklemeye Al">
+											<i class="fa fa-clock-o fa-2x"></i> 
+										</a>
+									</td>
+								</tr>
+						  </table>
+						</div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+		</section>
+	</div>
+	
+	
+	<div class="modal modal-info fade" id="modal-info2">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+					<span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">35 ABC 123 </h4>
+				</div>
+				<div class="modal-body">
+					<h3>Yapılan İş Açıklaması</h3>
+					<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline" data-dismiss="modal">Kapat</button>
+				</div>
+            </div>
+		</div>
+	</div>
+	
+	<footer class="main-footer">
+		<strong>Destek ve Bilgilendirme için: <a href="http://tmtbilisim.com.tr/" target="_blank">TMT Bilişim</a>. | </strong> Tüm Hakları Saklıdır.
+	</footer>
+
+	<div class="control-sidebar-bg"></div>
+</div>
+
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+	<script>
+	  $.widget.bridge('uibutton', $.ui.button);
+	</script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/raphael/raphael.min.js"></script>
+	<script src="bower_components/morris.js/morris.min.js"></script>
+	<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+	<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+	<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+	<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<script src="dist/js/adminlte.min.js"></script>
+	<script src="dist/js/pages/dashboard.js"></script>
+	<script src="dist/js/demo.js"></script>
+	<script src="bower_components/chart.js/Chart.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿
+<script>
+    Ekle = function () {
+        MustangModal.prop({
+            title: "Yeni @ViewBag.Baslik Ekle",
+            animate: "toggle",
+            speed: 300,
+            width: 950,
+            escapeClose: false,
+            onClose: function () {
+                Listele();
+            }
+        }).load('@Url.Action("Create")').open();
+    }
+
+    Sil = function (x) {
+        MustangModal.prop({
+            title: "@ViewBag.Baslik Sil",
+            animate: "toggle",
+            speed: 300,
+            width: 950,
+            escapeClose: false,
+            onClose: function () {
+                Listele();
+            }
+        }).load('@Url.Action("Delete")/'+x).open();
+    }
+
+    Duzenle = function (x) {
+        MustangModal.prop({
+            title: "@ViewBag.Baslik Düzenle",
+            animate: "toggle",
+            speed: 300,
+            width: 950,
+            escapeClose: false,
+            onClose: function () {
+                Listele();
+            }
+        }).load('@Url.Action("Edit")/'+x).open();
+    }
+
+    Gozat = function (x) {
+        MustangModal.prop({
+            title: "@ViewBag.Baslik Detayları",
+            animate: "toggle",
+            speed: 300,
+            width: 950,
+            escapeClose: false,
+            onClose: function () {
+                //Listele();
+            }
+        }).load('@Url.Action("Details")/'+x).open();
+    }
+</script>

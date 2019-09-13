@@ -1,0 +1,11 @@
+﻿<script>
+        Listele();
+        function Listele() {
+             $("#ajaxIndex").load('@Url.Action("AjaxIndex")',
+            function (response, status, xhr) {
+                if (status == "error") {
+                    errorAlert(response);
+                }
+            });
+        }
+</script>

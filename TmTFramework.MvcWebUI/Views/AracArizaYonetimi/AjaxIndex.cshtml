@@ -1,0 +1,83 @@
+﻿@model List<TmTFramework.Entities.ComplexType.ServisDetails>
+@{
+    Layout = null;
+    string arizaButtonClass = "btn-warning";
+    string arizaButtonSimgeClass = "fa-user-plus";
+}
+<style>
+    .islemDurum {
+        width: 100px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .btn-Islemde {
+        background-color: darkorange !important;
+    }
+
+    .btn-Beklemede {
+        background-color: red !important;
+    }
+
+    .btn-Tamamlandi {
+        background-color: limegreen !important;
+    }
+</style>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th style="width:100px;">Plaka</th>
+
+            <th>Araç Arızaları</th>
+            <th class="text-right">Genel Durum</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+       
+        @foreach (var servis in Model)
+        {
+
+
+            <tr>
+                <td>
+               @Html.Hidden(servis.Id.ToString())
+                <a  href="">@servis.AracPlaka </a></td>
+ 
+                <td>
+                    @foreach (var arizaKategori in servis.AracArizaKayitlari.ToList())
+                    {
+                        arizaButtonClass = "btn-primary"; arizaButtonSimgeClass = "fa-clock-o";
+
+                        if (arizaKategori.PersonelId == null)
+                        { arizaButtonClass = "btn-warning"; arizaButtonSimgeClass = "fa-user-plus"; }
+                        if (arizaKategori.ArizaTamamlandiMi)
+                        { arizaButtonClass = "btn-success"; arizaButtonSimgeClass = "fa-check"; }
+
+
+
+                        <button onclick="isDurumu(
+    '@arizaKategori.PersonelId',
+    '@arizaKategori.ArizaTamamlandiMi.ToString()',
+    '@arizaKategori.AracArizaKayitId')"
+                                class="btn @arizaButtonClass" style="width:120px; float:left;margin:2px;">
+                            <i class="fa @arizaButtonSimgeClass pull-left"></i>  @arizaKategori.ArizaKategoriAdi
+                        </button>
+
+                    }
+                </td>
+
+
+                <td class="text-right" ><span class="btn btn-@servis.ServisDurumu islemDurum">@servis.ServisDurumu</span></td>
+  
+            </tr>
+
+
+        }
+         
+    </tbody>
+</table>
+

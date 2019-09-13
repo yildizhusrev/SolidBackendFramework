@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<section class="content-header">
+    <h1>Ana Sayfa<small>Kontrol Paneli</small></h1>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">İşlemde Olan Araçlar</h3>
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Arama">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Plaka</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th align="right">Durum</th>
+                            <th></th>
+
+                        </tr>
+                        <tr>
+                            <td><a href="">35 ABC 123</a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 1 <label><input type="checkbox" checked></label></a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 2 <label><input type="checkbox" checked></label></a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 3 <label><input type="checkbox" checked></label></a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 4 <label><input type="checkbox" checked></label></a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 5 <label><input type="checkbox" checked></label></a></td>
+                            <td><span class="label label-success">Tamamlandı</span></td>
+                            <td>
+                                <a href="" title="Beklemeye Al">
+                                    <i class="fa fa-clock-o fa-2x"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="">35 ABC 123</a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 1 <label><input type="checkbox" checked></label></a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 2 <label><input type="checkbox"></label></a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 3 <label><input type="checkbox"></label></a></td>
+                            <td></td>
+                            <td></td>
+                            <td><span class="label label-warning">İşlemde</span></td>
+                            <td>
+                                <a href="" title="Beklemeye Al">
+                                    <i class="fa fa-clock-o fa-2x"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="">35 ABC 123</a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 3 <label><input type="checkbox"></label></a></td>
+                            <td><a href="" style="color:#333" data-toggle="modal" data-target="#modal-info2">Kategori 4 <label><input type="checkbox"></label></a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><span class="label label-danger">Beklemede</span></td>
+                            <td>
+                                <a href="" title="Personel Ata">
+                                    <i class="fa fa-user-plus fa-2x"></i>
+                                </a>
+                                <a href="" title="Beklemeye Al">
+                                    <i class="fa fa-clock-o fa-2x"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+<div class="modal modal-info fade" id="modal-info2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">35 ABC 123 </h4>
+            </div>
+            <div class="modal-body">
+                <h3>Yapılan İş Açıklaması</h3>
+                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>

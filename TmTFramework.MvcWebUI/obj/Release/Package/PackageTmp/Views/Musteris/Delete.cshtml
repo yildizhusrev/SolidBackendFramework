@@ -1,0 +1,53 @@
+﻿@model TmTFramework.Entities.Concrete.Musteri
+
+@{
+    Layout = null;
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "Basarili" }, new { id = "formKapsayici" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Müşteri Silmek İstediğinize Eminmisiniz?</h4>
+
+    <div>
+        @Model.AdSoyad <br />
+        @Model.Telefon <br />
+        @Model.Email
+    </div>
+    <hr />
+    @Html.Partial("_FormKaydetIptalPartial", new ViewDataDictionary { { "SubmitButtonText", "Sil" } })
+
+}
+
+
+<script type="text/javascript">
+
+
+    function Basarili(cevap) {
+        if (cevap.sonuc) {
+            toastr.success(cevap.mesaj);
+            MustangModal.close();
+        } else {
+            toastr.error(cevap.mesaj);
+        }
+    }
+    function Hatali(cevap) {
+        alert(cevap.data);
+    }
+    function PencereKapat() {
+        MustangModal.close();
+    }
+    //function Basarili(cevap) {
+    //        if (cevap.sonuc) {
+    //            //toastr.info("Sayfa yönlendiriliyor...");
+    //            toastr.success(cevap.mesaj);
+    //            MustangModal.close();
+    //            //setTimeout("MustangModal.close(); window.location.replace('"+cevap.data+"');", 2000);
+    //        } else {
+    //            toastr.error(cevap.mesaj);
+    //        }
+    //    }
+    //    function PencereKapat() {
+    //            MustangModal.close();
+    //    }
+</script>

@@ -1,0 +1,93 @@
+﻿@model TmTFramework.Entities.Concrete.Personel
+
+@{
+    Layout = null;
+
+}
+
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "Basarili" }, new { id = "formKapsayici" }))
+{
+               
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="col-md-6">
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AdSoyad, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.AdSoyad) } })
+                                @Html.ValidationMessageFor(model => model.AdSoyad, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Tc, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Tc, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Tc) } })
+                                @Html.ValidationMessageFor(model => model.Tc, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Telefon) } })
+                                @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Adres, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Adres) } })
+                                @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Unvan, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Unvan, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Adres) } })
+                                @Html.ValidationMessageFor(model => model.Unvan, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Kategorisi</label>
+                                <select class="form-control" multiple="multiple" data-placeholder="Seçiniz" style="width: 100%;">
+                                    <option>Kategorisi 1</option>
+                                    <option>Kategorisi 2</option>
+                                    <option>Kategorisi 3</option>
+                                    <option>Kategorisi 4</option>
+                                    <option>Kategorisi 5</option>
+                                </select>
+                            </div>
+                        </div>
+                       <div  class="clearfix"></div>
+                        <hr />
+                        @Html.Partial("_FormKaydetIptalPartial", new ViewDataDictionary { { "SubmitButtonText", "Kaydet" } })
+
+
+                    </div>
+
+                }
+            
+
+
+
+<script type="text/javascript">
+        function Basarili(cevap) {
+            if (cevap.sonuc) {
+                toastr.success(cevap.mesaj);
+                MustangModal.close();
+            } else {
+                toastr.error(cevap.mesaj);
+            }
+        }
+        function PencereKapat() {
+                MustangModal.close();
+        }
+</script>
+
+    
+

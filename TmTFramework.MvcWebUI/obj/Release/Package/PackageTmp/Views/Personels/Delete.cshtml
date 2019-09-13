@@ -1,0 +1,34 @@
+﻿@model TmTFramework.Entities.Concrete.Personel
+
+@{
+    Layout = null;
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "Basarili" }, new { id = "formKapsayici" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Personeli Silmek İstediğinize Eminmisiniz?</h4>
+
+    <div>
+        @Model.AdSoyad <br />
+        @Model.Tc
+    </div>
+    <hr />
+    @Html.Partial("_FormKaydetIptalPartial", new ViewDataDictionary { { "SubmitButtonText", "Sil" } })
+
+}
+
+
+<script type="text/javascript">
+    function Basarili(cevap) {
+        if (cevap.sonuc) {
+            toastr.success(cevap.mesaj);
+            MustangModal.close();
+        } else {
+            toastr.error(cevap.mesaj);
+        }
+    }
+    function PencereKapat() {
+        MustangModal.close();
+    }
+</script>
